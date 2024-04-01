@@ -13,6 +13,11 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $param = [
+            'name' => 'TestUser',
+            'email' => 'testuser@test',
+            'pass' => 'testuser'
+        ];
+        User::create($param);
     }
 }
