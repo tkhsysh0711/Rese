@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Favorites extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'restaurant_id',
+    ];
+
+    public function restaurants() {
+        return $this->belongsTo('App\Models\Restaurants');
+    }
 }

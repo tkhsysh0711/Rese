@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Area extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'area_name',
+    ];
+
+    public function restaurants() {
+        $this->hasMany('App\Models\Restaurants');
+    }
 }
