@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
         $param = [
             'name' => 'TestUser',
             'email' => 'testuser@test',
-            'pass' => 'testuser'
+            'password' => 'testuser'
         ];
         User::create($param);
     }
