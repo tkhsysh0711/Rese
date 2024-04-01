@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class UsersTableSeeder extends Seeder
 {
@@ -18,6 +19,6 @@ class UsersTableSeeder extends Seeder
             'email' => 'testuser@test',
             'password' => 'testuser'
         ];
-        User::create($param);
+        DB::table('users')->insert($param);
     }
 }

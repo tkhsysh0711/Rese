@@ -17,9 +17,9 @@ class CreateRestaurantsTable extends Migration
             $table->id();
             $table->foreignId('area_id')->constrained('areas');
             $table->foreignId('genre_id')->constrained('genres');
-            $table->ipAddress('restaurant_name');
-            $table->ipAddress('image');
-            $table->ipAddress('description');
+            $table->string('restaurant_name');
+            $table->string('image');
+            $table->string('description', 500);
             $table->timestamps();
         });
     }
