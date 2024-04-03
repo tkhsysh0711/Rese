@@ -1,0 +1,50 @@
+.register {
+    border-radius: 5px 5px;
+    box-shadow: 1px 1px 5px black;
+    width: 400px;
+    margin: 50px auto;
+}
+
+.register>h2 {
+    font-size: 16px;
+    background: #3366CC;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+}
+
+.register>form {
+    padding: 20px;
+}
+
+.register>form>div {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.register>form>div>img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.register>form>div>input {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: 20px;
+}
+
+.register>form>button {
+    background: #3366CC;
+    border-radius: 5px 5px;
+    color: #FFFFFF;
+    border: none;
+    padding: 5px 20px;
+    margin-left: 70%;
+    cursor: pointer;
+}
+
+.message {
+    margin: 5px 0 5px 25px;
+}

@@ -1,0 +1,32 @@
+.thanks {
+    position: relative;
+    border-radius: 5px 5px;
+    box-shadow: 1px 1px 5px black;
+    width: 500px;
+    height: 250px;
+    margin: 50px auto;
+}
+
+.thanks>div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.thanks>div>h2 {
+    margin-bottom: 50px;
+    font-size: 17px;
+}
+
+.thanks>div>button {
+    background: #3366CC;
+    border-radius: 5px 5px;
+    border: none;
+    padding: 5px 20px;
+}
+
+.thanks>div>button>a {
+    color: #FFFFFF;
+}
