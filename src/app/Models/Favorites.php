@@ -17,4 +17,9 @@ class Favorites extends Model
     public function restaurants() {
         return $this->belongsTo('App\Models\Restaurants');
     }
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 }

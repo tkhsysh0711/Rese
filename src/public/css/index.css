@@ -1,0 +1,94 @@
+.search {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border-radius: 5px 5px;
+    box-shadow: 1px 1px 5px black;
+    height: 40px;
+}
+
+.search>form>input,
+.search>form>select {
+    height: 40px;
+    border: none;
+    margin-right: 10px;
+}
+
+.index {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 300px;
+    margin: 10px;
+    border-radius: 5px 5px;
+    box-shadow: 1px 1px 5px black;
+}
+
+.card>img {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+.card_content {
+    padding: 20px 20px 0 20px;
+}
+
+.card_tag {
+    display: flex;
+}
+
+.card_tag>p {
+    margin: 10px 5px 20px 0;
+}
+
+.card_button {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card_button>a {
+    background-color: #3366CC;
+    color: #fbfbfb;
+    border-radius: 5px 5px;
+    padding: 5px 20px;
+    height: 20px;
+    line-height: 20px;
+}
+
+.heart {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: none;
+    background: white;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 50%;
+    height: 80%;
+    background: #E0548E;
+    border-radius: 25px 25px 0 0;
+    display: block;
+    position: absolute;
+    top: -10px;
+    cursor: pointer;
+}
+
+.heart::before {
+    transform: rotate(-45deg);
+    left: 14%;
+}
+
+.heart::after {
+    transform: rotate(45deg);
+    right: 14%;
+}
+
+.heart.gray::before,
+.heart.gray::after {
+    background: #cacaca;
+}

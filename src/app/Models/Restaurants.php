@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
-class Restaurant extends Model
+class Restaurants extends Model
 {
     use HasFactory;
 
@@ -24,7 +25,7 @@ class Restaurant extends Model
     }
     public function favorites()
     {
-        return $this->hasMany('App\Models\favorites');
+        return $this->hasMany('App\Models\Favorites');
     }
 
     public function areas() {
@@ -44,13 +45,13 @@ class Restaurant extends Model
     {
         $id = Auth::id();
 
-        $FAV_group = array();
+        $likers = array();
         
-        foreach($this->likes as $favorites) {
-            array_push($FAV_group, $favorites->user_id);
+        foreach($this->favorites as $favorite) {
+            array_push($likers, $favorite->user_id);
         }
 
-        if(in_array($id, $FAV_group)) {
+        if(in_array($id, $likers)) {
             return true;
         } else {
             return false;

@@ -14,15 +14,16 @@
         </ul>
     </div>
     @endif
+
     <form action="/login" method="post">
     @csrf
         <div>
             <img src="/img/mail.png">
-            <input type="email" name="email">
+            <input type="email" name="email" />
         </div>
         <div>
         <img src="/img/lock.png">
-            <input type="password" name="password">
+            <input type="password" name="password" />
         </div>
         <button type="submit">ログイン</button>
     </form>

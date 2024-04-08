@@ -16,6 +16,10 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::middleware('auth')->group(function () {
     Route::get('/', [RestaurantController::class, 'index']);
-});
+
+    Route::get('/search', [RestaurantController::class, 'search'])->name('search');
+
+    Route::get('/detail/{restaurant_id}',[RestaurantController::class, 'detail'])->name('detail');
+
+    Route::get('/favorite', [UserController::class, 'registerFavorite'])->name('registerFavorite');
