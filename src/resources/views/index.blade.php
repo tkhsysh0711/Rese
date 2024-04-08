@@ -29,10 +29,10 @@
         <div class="card">
             <img src="{{ $item['image'] }}" alt="店舗画像">
             <div class="card_content">
-                <h2>{{ $item['name'] }}</h2>
+                <h2>{{ $item['restaurant_name'] }}</h2>
                 <div class="card_tag">
-                    <p>#{{ $item['area_id'] }}</p>
-                    <p>#{{ $item['genre_id'] }}</p>
+                    <p>#{{ $item['area_name'] }}</p>
+                    <p>#{{ $item['genre_name'] }}</p>
                 </div>
                 <div class="card_button">  
                 <a href="{{ route('detail', ['restaurant_id' => $item->id]) }}">詳しく見る</a>
