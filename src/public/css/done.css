@@ -1,0 +1,39 @@
+.done {
+    width: 500px;
+    height: 300px;
+    border-radius: 5px 5px;
+    box-shadow: 1px 1px 5px black;
+    position: relative;
+    margin: 50px auto;
+}
+
+.done>div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+.done>div>button {
+    border: none;
+    height: 30px;
+    background-color: #6699CC;
+    border-radius: 5px 5px;
+    padding: 5px 15px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.done>div>button>a {
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #6699CC;
+}
+
+@media screen and (max-width:768px) {
+    .done {
+        width: 100%;
+    }
+}

@@ -22,4 +22,10 @@ use App\Http\Controllers\UserController;
 
     Route::get('/detail/{restaurant_id}',[RestaurantController::class, 'detail'])->name('detail');
 
-    Route::get('/favorite', [UserController::class, 'registerFavorite'])->name('registerFavorite');
+    Route::post('/reservation', [UserController::class, 'registerReservation'])->name('registerReservation');
+
+    Route::post('/favorite', [UserController::class, 'registerFavorite'])->name('registerFavorite');
+
+    Route::get('/favorite/delete', [UserController::class, 'deleteFavorite'])->name('deleteFavorite');
+
+    Route::get('/mypage', [UserController::class, 'mypage']);

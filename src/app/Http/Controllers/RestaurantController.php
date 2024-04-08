@@ -52,11 +52,11 @@ class RestaurantController extends Controller
         return view('shop', compact('items', 'areaLists', 'genreLists'));
     }
 
-    public function detail($restaurant_id)
+    public function detail($restaurants_id)
     {
-        $shop = Restaurants::find($restaurant_id);
+        $shop = Restaurants::find($restaurants_id);
 
-        $items = Reservations::where('restaurant_id', $restaurant_id)->get();
+        $items = Reservations::where('restaurants_id', $restaurants_id)->get();
         return view('detail', compact('shop', 'items'));
     }
 }
