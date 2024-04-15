@@ -32,7 +32,7 @@ class RestaurantController extends Controller
         $searchGenre = $request->input('searchGenre');
         $searchKeyWord = $request->input('searchKeyWord');
 
-        $query = Restaurants::select('restaurants.id', 'restaurants.name', 'restaurants.description', 'restaurants.image', 'restaurants.area_id', 'restaurants.genre_id');
+        $query = Restaurants::select('restaurants.id', 'restaurants.restaurant_name', 'restaurants.description', 'restaurants.image', 'restaurants.area_id', 'restaurants.genre_id');
         $query->join('areas', 'restaurants.area_id', '=', 'areas.id')
             ->join('genres', 'restaurants.genre_id', '=', 'genres.id');
 
@@ -43,13 +43,13 @@ class RestaurantController extends Controller
             $items = $query->where('genre_id', '=', $searchGenre)->get();
         }
         if(!empty($searchKeyWord)) {
-            $items = $query->where('restaurants.name', 'LIKE', '%'.$searchKeyWord.'%')->get();
+            $items = $query->where('restaurants.restaurant_name', 'LIKE', '%'.$searchKeyWord.'%')->get();
         }
 
         $areaLists = Areas::all();
-        $genreLists = Genre::all();
+        $genreLists = Genres::all();
 
-        return view('shop', compact('items', 'areaLists', 'genreLists'));
+        return view('index', compact('items', 'areaLists', 'genreLists'));
     }
 
     public function detail($restaurants_id)

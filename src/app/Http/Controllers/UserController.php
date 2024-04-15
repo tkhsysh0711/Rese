@@ -26,7 +26,7 @@ class UserController extends Controller
             'number' => $request->number,
             'date' => $request->date,
             'time' => $request->time,
-            'shop_id' => $request->shop_id,
+            'restaurants_id' => $request->restaurants_id,
             'user_id' => Auth::id()
         ]);
 
@@ -36,5 +36,23 @@ class UserController extends Controller
     public function done()
     {
         return view('done');
+    }
+
+    public function registerFavorite(Request $request)
+    {
+        Favorites::create([
+            "user_id" => Auth::id(),
+            "restaurants_id" => $request->restaurants_id,
+        ]);
+
+        return redirect()->back();
+    }
+
+    public function deleteFavorite($id)
+    {
+        $delete_item = Favorites::where('restaurants_id', $id)->where('user_id', Auth::id())->first();
+        $delete_item->delete();
+
+        return redirect()->back();
     }
 }
