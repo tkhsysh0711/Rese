@@ -18,7 +18,7 @@ class RestaurantController extends Controller
         $areaLists = Areas::all();
         $genreLists = Genres::all();
         if( Auth::check() ){
-            $favorites = Favorite::where('user_id', Auth::id())->get();
+            $favorites = Favorites::where('user_id', Auth::id())->get();
             return view('index',compact('items', 'areaLists', 'genreLists', 'favorites'));
         }
         else{

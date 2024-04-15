@@ -32,7 +32,7 @@
                         <button class="logout_button">Logout</button>
                     </form>
                 </li>
-                <li><a href="{{ route('home') }}">Mypage</a></li>
+                <li><a href="/mypage">Mypage</a></li>
                 @endif
             </ul>
         </div>

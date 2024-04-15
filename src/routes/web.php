@@ -18,11 +18,15 @@ use App\Http\Controllers\UserController;
 
     Route::get('/', [RestaurantController::class, 'index']);
 
+    Route::get('/thanks', [AuthController::class, 'thanks']);
+
     Route::get('/search', [RestaurantController::class, 'search'])->name('search');
 
     Route::get('/detail/{restaurant_id}',[RestaurantController::class, 'detail'])->name('detail');
 
     Route::post('/reservation', [UserController::class, 'registerReservation'])->name('registerReservation');
+
+    Route::get('/done', [UserController::class, 'done']);
 
     Route::post('/favorite', [UserController::class, 'registerFavorite'])->name('registerFavorite');
 

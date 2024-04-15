@@ -10,11 +10,16 @@ class AuthController extends Controller
     public function register()
     {
 
-        return view('thanks');
+        return redirect('/thanks');
     }
 
     public function login()
     {
         return view('index');
+    }
+
+    public function thanks()
+    {
+        return view('thanks');
     }
 }
