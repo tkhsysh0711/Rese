@@ -22,7 +22,7 @@ use App\Http\Controllers\UserController;
 
     Route::get('/search', [RestaurantController::class, 'search'])->name('search');
 
-    Route::get('/detail/{restaurant_id}',[RestaurantController::class, 'detail'])->name('detail');
+    Route::get('/detail/{restaurants_id}',[RestaurantController::class, 'detail'])->name('detail');
 
     Route::post('/reservation', [UserController::class, 'registerReservation'])->name('registerReservation');
 
@@ -30,6 +30,6 @@ use App\Http\Controllers\UserController;
 
     Route::post('/favorite', [UserController::class, 'registerFavorite'])->name('registerFavorite');
 
-    Route::get('/favorite/delete', [UserController::class, 'deleteFavorite'])->name('deleteFavorite');
+    Route::post('/favorite/delete', [UserController::class, 'deleteFavorite'])->name('deleteFavorite');
 
     Route::get('/mypage', [UserController::class, 'mypage']);

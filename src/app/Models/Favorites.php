@@ -11,7 +11,7 @@ class Favorites extends Model
 
     protected $fillable = [
         'user_id',
-        'restaurant_id',
+        'restaurants_id',
     ];
 
     public function restaurants() {

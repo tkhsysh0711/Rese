@@ -15,9 +15,19 @@ class CreateFavoritesTable extends Migration
     {
         Schema::create('favorites', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('restaurants_id')->constrained('restaurants');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('restaurants_id');
             $table->timestamps();
+
+            $table  ->foreign("user_id")
+                    ->references("id")
+                    ->on("users")
+                    ->onDelete("cascade");
+
+            $table  ->foreign("restaurants_id")
+                    ->references("id")
+                    ->on("restaurants")
+                    ->onDelete("cascade");
         });
     }
 

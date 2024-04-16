@@ -31,25 +31,25 @@
             <div class="card_content">
                 <h2>{{ $item['restaurant_name'] }}</h2>
                 <div class="card_tag">
-                    <p>#{{ $item['area_name'] }}</p>
-                    <p>#{{ $item['genre_name'] }}</p>
+                    <p>#{{ $item['area_id'] }}</p>
+                    <p>#{{ $item['genre_id'] }}</p>
                 </div>
                 <div class="card_button">  
-                <a href="{{ route('detail', ['restaurant_id' => $item->id]) }}">詳しく見る</a>
+                <a href="{{ route('detail', ['restaurants_id' => $item->id]) }}">詳しく見る</a>
                 @if($item->is_liked_by_auth_user())
                     @foreach($favorites as $favorite)
-                        @if( $favorite['restaurant_id'] === $item['id'] )  
-                            <form action="{{ route('deleteFavorite', ['restaurant_id' => $item['id']]) }}" method="POST">
+                        @if( $favorite['restaurants_id'] === $item['id'] )  
+                            <form action="{{ route('deleteFavorite', ['restaurants_id' => $item['id']]) }}" method="POST">
                             @csrf
-                                <input type="hidden" name="restaurant_id" value="{{ $item->id }}">
+                                <input type="hidden" name="restaurants_id" value="{{ $item->id }}">
                                 <button tupe="submit" class="heart"></button>
                             </form>
                         @endif
                     @endforeach
                 @else
-                    <form action="{{ route('registerFavorite', ['restaurant_id' => $item['id']]) }}" method="POST">
+                    <form action="{{ route('registerFavorite', ['restaurants_id' => $item['id']]) }}" method="POST">
                     @csrf
-                        <input type="hidden" name="restaurant_id" value="{{ $item->id }}">
+                        <input type="hidden" name="restaurants_id" value="{{ $item->id }}">
                         <button tupe="submit" class="heart gray"></button>
                     </form>
                 @endif

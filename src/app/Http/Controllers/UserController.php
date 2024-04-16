@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Reservations;
 use App\Models\Favorites;
+use App\Models\Restaurants;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Fortify\Fortify;
 use App\Http\Requests\ReservationRequest;

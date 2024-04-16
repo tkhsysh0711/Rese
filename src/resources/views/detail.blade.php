@@ -14,8 +14,8 @@
         </div>
         <img src="{{ $shop['image'] }}" alt="店舗画像">
         <div class="detail_tags">
-            <p>#{{ $shop['area_name'] }}</p>
-            <p>#{{ $shop['genre_name'] }}</p>
+            <p>#{{ $shop['area_id'] }}</p>
+            <p>#{{ $shop['genre_id'] }}</p>
         </div>
         <div>
             <p>{{ $shop['description'] }}</p>
@@ -24,7 +24,7 @@
 
     <div class="reservation">
         <h2>予約</h2>
-        <form action="{{ route('registerReservation',['restaurant_id' => $shop['id'] ]) }}" method="POST">
+        <form action="{{ route('registerReservation',['restaurants_id' => $shop['id'] ]) }}" method="POST">
         @csrf
             <div>
                 @if($errors->has('date'))

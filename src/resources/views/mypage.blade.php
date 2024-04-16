@@ -49,14 +49,14 @@
             <div>
                 @foreach ($favorites as $favorite)
                     <div class="home_favorite_card">
-                        <img src="{{ $favorite['shop']['picture'] }}" alt="店舗画像">
+                        <img src="{{ $favorite['restaurants']['image'] }}" alt="店舗画像">
                         <div>
-                            <h2>{{ $favorite['shop']['name'] }}</h2>
+                            <h2>{{ $favorite['restaurants']['restaurant_name'] }}</h2>
                             <div class="home_favorite_card_tag">
-                                <p>#{{ $favorite['shop']['area']['name'] }}</p>
-                                <p>#{{ $favorite['shop']['genre']['name'] }}</p>
+                                <p>#{{ $favorite['area_name'] }}</p>
+                                <p>#{{ $favorite['genre_name'] }}</p>
                             </div>
-                            <a href="{{ route('detail', ['restaurant_id' => $favorite['shop']['id'] ]) }}">詳しく見る</a>
+                            <a href="{{ route('detail', ['restaurants_id' => $favorite['restaurants']['id'] ]) }}">詳しく見る</a>
                         </div>
                     </div>
                 @endforeach
