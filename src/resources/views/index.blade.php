@@ -42,7 +42,7 @@
                             <form action="{{ route('deleteFavorite', ['restaurants_id' => $item['id']]) }}" method="POST">
                             @csrf
                                 <input type="hidden" name="restaurants_id" value="{{ $item->id }}">
-                                <button tupe="submit" class="heart"></button>
+                                <button type="submit" class="heart"></button>
                             </form>
                         @endif
                     @endforeach
@@ -50,7 +50,7 @@
                     <form action="{{ route('registerFavorite', ['restaurants_id' => $item['id']]) }}" method="POST">
                     @csrf
                         <input type="hidden" name="restaurants_id" value="{{ $item->id }}">
-                        <button tupe="submit" class="heart gray"></button>
+                        <button type="submit" class="heart gray"></button>
                     </form>
                 @endif
                 </div>

@@ -79,7 +79,7 @@
                 </tr>
             </table>
             @endforeach
-            <button>予約する</button>
+            <button type="submit">予約する</button>
         </form>
     </div>
 </div>

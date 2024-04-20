@@ -16,7 +16,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-    Route::get('/', [RestaurantController::class, 'index']);
+    Route::get('/', [RestaurantController::class, 'index'])->name('index');
 
     Route::get('/thanks', [AuthController::class, 'thanks']);
 
@@ -24,12 +24,14 @@ use App\Http\Controllers\UserController;
 
     Route::get('/detail/{restaurants_id}',[RestaurantController::class, 'detail'])->name('detail');
 
-    Route::post('/reservation', [UserController::class, 'registerReservation'])->name('registerReservation');
+    Route::middleware('auth')->group(function () {
+        Route::post('/reservation', [UserController::class, 'registerReservation'])->name('registerReservation');
 
-    Route::get('/done', [UserController::class, 'done']);
+        Route::get('/done', [UserController::class, 'done']);
 
-    Route::post('/favorite', [UserController::class, 'registerFavorite'])->name('registerFavorite');
+        Route::post('/favorite', [UserController::class, 'registerFavorite'])->name('registerFavorite');
 
-    Route::post('/favorite/delete', [UserController::class, 'deleteFavorite'])->name('deleteFavorite');
+        Route::post('/favorite/delete', [UserController::class, 'deleteFavorite'])->name('deleteFavorite');
 
-    Route::get('/mypage', [UserController::class, 'mypage']);
+        Route::get('/mypage', [UserController::class, 'mypage']);
+    });

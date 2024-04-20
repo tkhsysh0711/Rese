@@ -31,7 +31,7 @@ class UserController extends Controller
             'user_id' => Auth::id()
         ]);
 
-        return redirect('/done');
+        return view('done');
     }
 
     public function done()
