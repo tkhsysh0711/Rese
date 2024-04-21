@@ -12,11 +12,7 @@
             <h2>予約状況</h2>
                 @foreach($items as $item)
                     <div class="home_reservation_card">
-                        <div>
-                            <form action="{{ route('reservation.show', $item->id) }}" method="GET">
-                            @csrf
-                                <button class="time"></button>
-                            </form>
+                        <div>                            
                             <h3>予約</h3>
                             <form action="{{ route('deleteReservation', $item->id) }}" method="POST">
                             @csrf
@@ -26,7 +22,7 @@
                         <table>
                             <tr>
                                 <td>Shop</td>
-                                <td>{{ $item['shop']['name'] }}</td>
+                                <td>{{ $item['restaurants']['restaurant_name'] }}</td>
                             </tr>
                             <tr>
                                 <td>Date</td>

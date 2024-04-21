@@ -27,6 +27,8 @@ use App\Http\Controllers\UserController;
     Route::middleware('auth')->group(function () {
         Route::post('/reservation', [UserController::class, 'registerReservation'])->name('registerReservation');
 
+        Route::post('/reservation/delete', [UserController::class, 'deleteReservation'])->name('deleteReservation');
+
         Route::get('/done', [UserController::class, 'done']);
 
         Route::post('/favorite', [UserController::class, 'registerFavorite'])->name('registerFavorite');

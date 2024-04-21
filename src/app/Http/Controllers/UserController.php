@@ -39,6 +39,12 @@ class UserController extends Controller
         return view('done');
     }
 
+    public function deleteReservation($id)
+    {
+        Reservations::where('id', $id)->delete();
+        return redirect()->back();
+    }
+
     public function registerFavorite(Request $request)
     {
         Favorites::create([
