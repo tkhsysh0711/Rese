@@ -18,13 +18,12 @@ class Restaurants extends Model
         'image',
     ];
 
-    public function reservations()
-    {
+    public function reservations(){
         $limit_time = date('Y-m-d H:i', strtotime('-1 hour'));
         return $this->hasMany('App\Models\Reservations')->orderBy('start_at', 'asc')->where('start_at', '>=', $limit_time);
     }
-    public function favorites()
-    {
+
+    public function favorites(){
         return $this->hasMany('App\Models\Favorites');
     }
 
@@ -46,14 +45,16 @@ class Restaurants extends Model
         $id = Auth::id();
 
         $likers = array();
-        
+
         foreach($this->favorites as $favorite) {
             array_push($likers, $favorite->user_id);
         }
 
         if(in_array($id, $likers)) {
             return true;
-        } else {
+        } 
+        
+        else {
             return false;
         }
     }

@@ -10,7 +10,6 @@
         <div>
             <a href="/"><</a>
             <h2>{{ $shop['restaurant_name'] }}</h2>
-            
         </div>
         <img src="{{ $shop['image'] }}" alt="店舗画像">
         <div class="detail_tags">
