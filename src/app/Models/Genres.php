@@ -14,6 +14,6 @@ class Genres extends Model
     ];
 
     public function restaurants() {
-        $this->hasMany('App\Models\Restaurants');
+        return $this->hasMany('App\Models\Restaurants');
     }
 }

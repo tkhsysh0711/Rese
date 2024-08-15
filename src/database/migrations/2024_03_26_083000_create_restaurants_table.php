@@ -21,6 +21,9 @@ class CreateRestaurantsTable extends Migration
             $table->string('image');
             $table->string('description', 500);
             $table->timestamps();
+
+            $table->foreign('area_id')->references('id')->on('areas');
+            $table->foreign('genre_id')->references('id')->on('genres');
         });
     }
 

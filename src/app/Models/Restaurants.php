@@ -28,11 +28,11 @@ class Restaurants extends Model
     }
 
     public function areas() {
-        return $this->belongsTo('App\Models\Areas');
+        return $this->belongsTo('App\Models\Areas', 'area_id');
     }
 
     public function genres() {
-        return $this->belongsTo('App\Models\Genres');
+        return $this->belongsTo('App\Models\Genres', 'genre_id');
     }
 
     public function users() {

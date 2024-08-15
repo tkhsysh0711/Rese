@@ -31,8 +31,8 @@
             <div class="card_content">
                 <h2>{{ $item['restaurant_name'] }}</h2>
                 <div class="card_tag">
-                    <p>#{{ $item['area_id'] }}</p>
-                    <p>#{{ $item['genre_id'] }}</p>
+                    <p>#{{ $item->areas->area_name }}</p>
+                    <p>#{{ $item->genres->genre_name }}</p>
                 </div>
                 <div class="card_button">  
                 <a href="{{ route('detail', ['restaurants_id' => $item->id]) }}">詳しく見る</a>
