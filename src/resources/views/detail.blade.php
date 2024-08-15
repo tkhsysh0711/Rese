@@ -13,8 +13,8 @@
         </div>
         <img src="{{ $shop['image'] }}" alt="店舗画像">
         <div class="detail_tags">
-            <p>#{{ $shop['area_id'] }}</p>
-            <p>#{{ $shop['genre_id'] }}</p>
+            <p>#{{ $shop->areas->area_name }}</p>
+            <p>#{{ $shop->genres->genre_name }}</p>
         </div>
         <div>
             <p>{{ $shop['description'] }}</p>
